@@ -14,6 +14,7 @@ const uri = "mongodb+srv://dbUser:dbUser@cluster0.rcapfpn.mongodb.net/?retryWrit
 MongoClient.connect(uri,(err, client) =>{
     if(err) return console.log(err)
     db = client.db('bancoPlus')
+    
 
     app.listen(3000 , () =>{
         console.log("rodando safe")
@@ -49,9 +50,9 @@ app.post('/show',(req,res)=>{
 })
 
 app.get('/', (req,res) =>{
-    let cursor = db.collection('clientePlus').find()
+    let cursor = db.collection('clientePlus2').find()
 })
-
+/*
 app.post('/register',(req,res) =>{
     db.collection("clientePlus").insertOne(req.body,(err,result) => {
         if(err) return console.log(err)
@@ -62,6 +63,19 @@ app.post('/register',(req,res) =>{
         })
     })
 })
+*/
+
+app.post('/register',(req,res) =>{
+    db.collection("clientePlus2").insertOne(req.body,(err,result) => {
+        if(err) return console.log(err)
+        console.log("salvou no nosso banco")
+        res.redirect("/register")
+        db.collection("clientePlus2").find().toArray((err,results)=>{
+            console.log(results[results.length-1].password)
+        })
+    })
+})
+
 
 
 //permitir servidor se comunicar com o navegador

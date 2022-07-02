@@ -9,7 +9,17 @@ function onChangePassword() {
 }
 
 function login() {
-    showLoading();
+
+    //MONGODB
+
+    
+
+
+
+
+    // FIREBASE
+
+    /*showLoading();
     firebase.auth().signInWithEmailAndPassword(
         form.email().value, form.password().value
     ).then(() => {
@@ -19,6 +29,9 @@ function login() {
         hideLoading();
         alert(getErrorMessage(error));
     });
+
+    */
+
 }
 
 function getErrorMessage(error) {
