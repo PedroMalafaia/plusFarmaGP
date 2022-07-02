@@ -9,10 +9,20 @@ function onChangePassword() {
 }
 
 function login() {
-
+    //const MongoClient = require('mongodb').MongoClient;
     //MONGODB
+    console.log("oi")
 
     
+    try {
+            if ((form.email().value == "3@3.com") && (form.password().value == "123456"))
+            console.log("o if deu certo")
+            window.location.href = "./";
+
+        } catch (error) {
+            console.log(error)
+            
+        }
 
 
 

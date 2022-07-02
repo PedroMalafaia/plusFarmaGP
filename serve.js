@@ -17,7 +17,7 @@ MongoClient.connect(uri,(err, client) =>{
     
 
     app.listen(3000 , () =>{
-        console.log("rodando safe")
+        console.log("RODANDO")
     })
 })
 
@@ -72,6 +72,7 @@ app.post('/register',(req,res) =>{
         res.redirect("/register")
         db.collection("clientePlus2").find().toArray((err,results)=>{
             console.log(results[results.length-1].password)
+            console.log(results[results.length-1].email)
         })
     })
 })
