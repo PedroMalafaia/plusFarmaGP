@@ -79,6 +79,8 @@ app.post('/register',(req,res) =>{
 
 
 
+
+
 //permitir servidor se comunicar com o navegador
 
 
