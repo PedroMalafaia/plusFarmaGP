@@ -56,7 +56,18 @@
 
 <link rel="stylesheet" href="../public/css/login.css">
 
-<script src="../serve.js"></script>
+<script>
+    function logar(){
+    // PEGANDO SENHA E EMAIL DO FORMULARIO DE LOGIN //
+    const form = {
+        email: () => document.getElementById("email"),
+        password: () => document.getElementById("password"),
+    }
+
+    console.log(form.email().value,form.password().value)
+
+}
+</script>
 <script src="js/login.js"></script>
 <script src="js/validations.js"></script>
 <script src="js/loading.js"></script>

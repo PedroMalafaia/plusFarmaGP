@@ -15,7 +15,6 @@ MongoClient.connect(uri,(err, client) =>{
     if(err) return console.log(err)
     db = client.db('bancoPlus')
     
-
     app.listen(3000 , () =>{
         console.log("RODANDO")
     })
