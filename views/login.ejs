@@ -35,7 +35,7 @@
                              <p>Continar sem cadastro? <a href="/"> clique aqui</a></p>
                         </div>
                         <div>
-                            <button type="button" class="solid" id="login-button" onclick="logar()">Entrar</button>
+                            <button type="submit" class="solid" id="login-button">Entrar</button>
                         </div>
                         <div>
                             <a href="/RecSenha"><button type="button" class="clear">Recuperar senha</button></a>
@@ -56,18 +56,7 @@
 
 <link rel="stylesheet" href="../public/css/login.css">
 
-<script>
-    function logar(){
-    // PEGANDO SENHA E EMAIL DO FORMULARIO DE LOGIN //
-    const form = {
-        email: () => document.getElementById("email"),
-        password: () => document.getElementById("password"),
-    }
 
-    console.log(form.email().value,form.password().value)
-
-}
-</script>
 <script src="js/login.js"></script>
 <script src="js/validations.js"></script>
 <script src="js/loading.js"></script>
