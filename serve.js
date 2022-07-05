@@ -79,12 +79,12 @@ app.post('/register',(req,res) =>{
 app.post('/login',(req,res)=>{
     var email1 = req.body.email
     var senha = req.body.password
-    var query = {email:email1,password:senha }
+    var query = {email:email1,password:senha}
     db.collection("clientePlus2").find(query).toArray((err,results)=>{
-        if (results == [null] || err) {
-            return console.log('nao encontrou')
+        if (results.value == undefined || err) {
+            return res.redirect('/login',404)
         } else{
-            return console.log(results) ,res.redirect("/login")
+            return console.log(results.value) ,res.redirect("/")
              
         }
 
