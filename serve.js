@@ -81,12 +81,8 @@ app.post('/login',(req,res)=>{
     var senha = req.body.password
     var query = {email:email1,password:senha}
     db.collection("clientePlus2").find(query).toArray((err,results)=>{
-        if (results.value == undefined || err) {
-            return res.redirect('/login',404)
-        } else{
-            return console.log(results.value) ,res.redirect("/")
-             
-        }
+        if (results[0] == undefined ) return res.send('<script type="text/javascript">alert("Não encontrado");window.location = "http://localhost:3000/login";</script>')
+        res.redirect("/")
 
     })
     

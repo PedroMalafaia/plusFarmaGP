@@ -74,3 +74,4 @@ const form = {
     passwordRequiredError: () => document.getElementById('password-required-error'),
     registerButton: () => document.getElementById('register-button')
 }
+
